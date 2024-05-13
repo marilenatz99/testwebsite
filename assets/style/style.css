@@ -26,12 +26,15 @@ header h1 {
 
 /* Carousel styles */
 header .carousel {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Set maximum width as needed */
+    height: 300px; /* Adjust as needed */
+    margin: 0 auto; /* Center the carousel */
+    overflow: hidden;
 }
 
-header .carousel img {
+.carousel img {
     position: absolute;
     top: 0;
     left: 0;
@@ -69,16 +72,17 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px; /* Adjust spacing between items */
+    gap: 20px;
 }
 
 .venue-item {
     text-align: center;
+    width: 300px;
 }
 
 .venue-item img {
     width: 100%;
-    height: auto;
+    height: 200px;
     border-radius: 5px;
     margin-bottom: 10px;
 }
