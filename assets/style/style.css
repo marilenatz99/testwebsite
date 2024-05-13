@@ -34,7 +34,7 @@ header .carousel {
     overflow: hidden;
 }
 
-.carousel img {
+header .carousel img {
     position: absolute;
     top: 0;
     left: 0;
