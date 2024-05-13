@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Venue Website</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1>Welcome to Our Event Venue</h1>
+    <!-- Image Carousel -->
+    <div id="imageCarousel" class="carousel">
+        <!-- Add your carousel images here -->
+    </div>
+</header>
+
+<!-- Venue Carousel Section -->
+<section id="venue">
+    <h2>Venue Options</h2>
+    <div id="venueCarousel" class="carousel">
+        <!-- Add your venue carousel items here -->
+    </div>
+</section>
+
+<!-- Team Section -->
+<section id="team">
+    <h2>Our Team</h2>
+    <!-- Add your team members here -->
+</section>
+
+<!-- About Us Section -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum eros vitae tellus porttitor, et vestibulum elit fermentum.</p>
+    <!-- Add more information about your company -->
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="contact">
+        <i class="fas fa-phone"></i>
+        <span>+1234567890</span>
+        <button onclick="openChat()">Contact us</button>
+    </div>
+    <div class="location">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Your Address Here</span>
+    </div>
+</footer>
+
+<!-- Add your JavaScript code here for carousel functionality and WhatsApp chat -->
+
+<script>
+    // JavaScript for image carousel
+    // Example:
+    // let imageIndex = 0;
+    // const images = ['image1.jpg', 'image2.jpg', 'image3.jpg'];
+    // function changeImage() {
+    //     document.getElementById('imageCarousel').src = images[imageIndex];
+    //     imageIndex = (imageIndex + 1) % images.length;
+    //     setTimeout(changeImage, 3000); // Change image every 3 seconds
+    // }
+    // changeImage();
+
+    // JavaScript for WhatsApp chat
+    function openChat() {
+        // Change 'yourPhoneNumber' to your actual WhatsApp number
+        window.open('https://wa.me/yourPhoneNumber', '_blank');
+    }
+</script>
+
+</body>
+</html>
