@@ -15,7 +15,7 @@ body {
 /* Header styles */
 header {
     background-color: #ffe5ec;
-    color: #fff;
+    color: #333;
     text-align: center;
     padding: 20px;
 }
@@ -66,6 +66,7 @@ header .carousel .imgwds.active {
 
 /* Venue Carousel styles */
 #venue {
+    text-align: center;
     background-color: #f9f9f9;
     padding: 20px 0;
 }
@@ -101,6 +102,7 @@ header .carousel .imgwds.active {
 
 /* About Us section */
 #about {
+    text-align: center;
     background-color: #fff;
     padding: 20px;
     margin-bottom: 20px;
@@ -108,7 +110,7 @@ header .carousel .imgwds.active {
 
 /* Footer styles */
 footer {
-    background-color: #333;
+    background-color: #ffe5ec;
     color: #fff;
     padding: 20px 0;
 }
@@ -128,12 +130,13 @@ footer .container {
 }
 
 .contact button {
-    background-color: #4CAF50;
+    background-color: #333;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin: 20px;
 }
 
 .contact button:hover {
