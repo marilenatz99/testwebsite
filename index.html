@@ -20,9 +20,20 @@
         <h1>Welcome to Our Event Venue</h1>
         <!-- Image Carousel -->
         <div id="imageCarousel" class="carousel">
-            <img src="assets/images/food1.jpg" alt="Image 1">
-            <img src="assets/images/food2.jpg" alt="Image 2">
-            <img src="assets/images/food3.jpg" alt="Image 3">
+            <div class="imgwds">
+                <img src="assets/images/food1.jpg" alt="Image 1">
+                <p>Experience unparalleled culinary excellence, meticulously tailored for your special occasions.</p>
+            </div>
+            <div class="imgwds">
+                <img src="assets/images/food1.jpg" alt="Image 2">
+                <p>Elevate your gatherings with our diverse array of gourmet offerings, meticulously crafted to delight
+                    every palate.</p>
+            </div>
+            <div class="imgwds">
+                <img src="assets/images/food3.jpg" alt="Image 3">
+                <p>Indulge in the art of gastronomy as we curate a symphony of flavors, ensuring your event is a
+                    culinary masterpiece.</p>
+            </div>
         </div>
     </header>
 
@@ -90,7 +101,7 @@
     <script>
         // JavaScript for image carousel
         let imageIndex = 0;
-        const images = document.querySelectorAll('#imageCarousel img');
+        const images = document.querySelectorAll('#imageCarousel .imgwds');
         const totalImages = images.length;
 
         function showImage(index) {
