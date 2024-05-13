@@ -44,7 +44,7 @@ header .carousel img {
     transition: opacity 0.5s ease;
 }
 
-header .carousel img.active {
+header .carousel .imgwds.active {
     opacity: 1;
 }
 
