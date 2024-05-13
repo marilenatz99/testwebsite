@@ -100,22 +100,22 @@
 
     <script>
         // JavaScript for image carousel
-        let imageIndex = 0;
-        const images = document.querySelectorAll('#imageCarousel .imgwds');
-        const totalImages = images.length;
+        let ImgwdsIndex = 0;
+        const imgwds = document.querySelectorAll('#imageCarousel .imgwds');
+        const totalImgwds = imgwds.length;
 
-        function showImage(index) {
-            images.forEach(img => img.classList.remove('active'));
-            images[index].classList.add('active');
+        function showImgwds(index) {
+            imgwds.forEach(img => img.classList.remove('active'));
+            imgwds[index].classList.add('active');
         }
 
-        function nextImage() {
-            imageIndex = (imageIndex + 1) % totalImages;
-            showImage(imageIndex);
+        function nextImgwds() {
+            ImgwdsIndex = (ImgwdsIndex + 1) % totalImgwds;
+            showImgwds(ImgwdsIndex);
         }
 
         // Change image every 3 seconds
-        setInterval(nextImage, 3000);
+        setInterval(nextImgwds, 3000);
 
 
         // JavaScript for WhatsApp chat

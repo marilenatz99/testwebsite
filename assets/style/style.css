@@ -29,7 +29,7 @@ header .carousel {
     position: relative;
     width: 100%;
     max-width: 100%; /* Set maximum width as needed */
-    height: 100%; /* Adjust as needed */
+    height: 1000px; /* Adjust as needed */
     margin: 0 auto; /* Center the carousel */
     overflow: hidden;
 }
