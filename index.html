@@ -20,7 +20,9 @@
         <h1>Welcome to Our Event Venue</h1>
         <!-- Image Carousel -->
         <div id="imageCarousel" class="carousel">
-            <!-- Add your carousel images here -->
+            <img src="assets/images/food1.jpg" alt="Image 1">
+            <img src="assets/images/food2.jpg" alt="Image 2">
+            <img src="assets/images/food3.jpg" alt="Image 3">
         </div>
     </header>
 
@@ -64,13 +66,22 @@
     <script>
         // JavaScript for image carousel
         let imageIndex = 0;
-        const images = ['assets/images/food1.jpg', 'assets/images/food2.jpg', 'assets/images/food3.jpg'];
-        function changeImage() {
-            document.getElementById('imageCarousel').src = images[imageIndex];
-            imageIndex = (imageIndex + 1) % images.length;
-            setTimeout(changeImage, 3000); // Change image every 3 seconds
+        const images = document.querySelectorAll('#imageCarousel img');
+        const totalImages = images.length;
+
+        function showImage(index) {
+            images.forEach(img => img.classList.remove('active'));
+            images[index].classList.add('active');
         }
-        changeImage();
+
+        function nextImage() {
+            imageIndex = (imageIndex + 1) % totalImages;
+            showImage(imageIndex);
+        }
+
+        // Change image every 3 seconds
+        setInterval(nextImage, 3000);
+
 
         // JavaScript for WhatsApp chat
         function openChat() {
