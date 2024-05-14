@@ -12,7 +12,14 @@ body {
     padding: 20px;
 }
 
-/* Navbar styles */
+/* Header styles */
+header {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Header Navbar styles */
 nav {
     color: #fff;
     display: flex;
@@ -33,21 +40,25 @@ nav {
 .nav-links li a {
     text-decoration: none;
     color: #fff;
-    padding: 20px;
+    padding: 15px 30px;
 }
 
 .nav-links li a:hover {
     background-color: #ff8fab;
+    border-radius: 5px;
 }
 
 .logo img {
-    height: 40px;
+    height: 100px;
 }
 
-/* Header styles */
-header {
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Header Carousel styles */
@@ -109,6 +120,7 @@ header .carousel img {
 
 .imgwds button.about:hover {
     background-color: #ddd;
+    color: #333;
 }
 
 

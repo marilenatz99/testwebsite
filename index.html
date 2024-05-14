@@ -145,6 +145,18 @@
             // Change 'yourPhoneNumber' to your actual WhatsApp number
             window.open('https://wa.me/yourPhoneNumber', '_blank');
         }
+
+        window.addEventListener('scroll', function () {
+            var header = document.querySelector('header');
+            var navbar = document.getElementById('navbar');
+
+            if (window.scrollY > header.offsetHeight) {
+                navbar.classList.add('fixed');
+            } else {
+                navbar.classList.remove('fixed');
+            }
+        });
+
     </script>
 
 </body>
