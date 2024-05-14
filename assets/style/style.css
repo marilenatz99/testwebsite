@@ -12,6 +12,42 @@ body {
     padding: 20px;
 }
 
+/* Navbar styles */
+nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+nav:hover {
+    background-color: #ff8fab;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo img {
+    height: 40px;
+}
+
 /* Header styles */
 header {
     text-align: center;
