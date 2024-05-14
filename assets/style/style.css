@@ -14,16 +14,11 @@ body {
 
 /* Navbar styles */
 nav {
-    background-color: #333;
     color: #fff;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 10px 20px;
-}
-
-nav:hover {
-    background-color: #ff8fab;
 }
 
 .nav-links {
@@ -32,16 +27,17 @@ nav:hover {
 }
 
 .nav-links li {
-    margin-right: 20px;
-}
-
-.nav-links li:last-child {
-    margin-right: 0;
+    margin: 20px;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: #fff;
+    padding: 20px;
+}
+
+.nav-links li a:hover {
+    background-color: #ff8fab;
 }
 
 .logo img {
@@ -76,7 +72,7 @@ header .carousel img {
     left: 0;
     width: 100%;
     height: auto;
-    opacity: 1;
+    opacity: 0.5;
     transition: opacity 0.5s ease;
 }
 
@@ -204,3 +200,18 @@ footer .container {
 i {
     margin-right: 10px; /* Adjust spacing between icon and text */
 }
+
+
+/* On screens that are 992px wide or less,  */
+@media screen and (max-width: 992px) {
+    header .carousel {
+      height: 70%;
+    }
+  }
+  
+  /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    header .carousel {
+        height: 50%;
+      }
+  }
