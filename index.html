@@ -5,40 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/style/style.css">
+    <script defer src="script.js"></script>
     <title>Event Venue Website</title>
 </head>
 
 <body>
     <!-- Header -->
-    <header>
+    <header id="header">
         <nav>
             <div class="logo">
                 <img src="assets/images/logo.png" alt="Logo">
             </div>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#venue">Venues</a></li>
+                <li><a href="#about">About</a></li>
+                <!-- <li><a href="#services">Services</a></li> -->
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <div class="contact">
+                        <a class="button txt-ios"
+                            href="sms://+/&body=Good%20afternoon.%20We%20are%20planning%20an%20event%20and%20would%20like%20to%20inquire%20about%20your%20services.%20Can%20we%20please%20discuss%20menu%20options%20and%20availability%20at%20your%20earliest%20convenience?%20Thank%20you.">
+                            <img src="assets/icons/i-messages.png" alt=""><span>+1 (212)658-3916</span>
+                        </a>
+                    </div>
+                </li>
             </ul>
         </nav>
         <!-- Image Carousel -->
         <div id="imageCarousel" class="carousel">
             <div class="imgwds">
-                <img src="assets/images/food1.jpg" alt="Image 1">
+                <div class="slide-image" data-background="assets/images/food1.jpg"
+                    style="background: url(&quot;assets/images/food1.jpg&quot;);"></div>
                 <div class="descr">
-                    <h1>Welcome to Our Event Venue</h1>
+                    <h1 class="sacramento-regular">Welcome to Our Event Venue</h1>
                     <p>Experience unparalleled culinary excellence, meticulously tailored for your special occasions.
                     </p>
                     <button class="about">Read More</button>
                 </div>
             </div>
             <div class="imgwds">
-                <img src="assets/images/food2.jpg" alt="Image 2">
+                <div class="slide-image" data-background="assets/images/food2.jpg"
+                    style="background: url(&quot;assets/images/food2.jpg&quot;);"></div>
                 <div class="descr">
-                    <h1>Welcome to Our Event Venue</h1>
+                    <h1 class="sacramento-regular">Welcome to Our Event Venue</h1>
                     <p>Elevate your gatherings with our diverse array of gourmet offerings, meticulously crafted to
                         delight
                         every palate.</p>
@@ -46,9 +57,10 @@
                 </div>
             </div>
             <div class="imgwds">
-                <img src="assets/images/food3.jpg" alt="Image 3">
+                <div class="slide-image" data-background="assets/images/food3.jpg"
+                    style="background: url(&quot;assets/images/food3.jpg&quot;);"></div>
                 <div class="descr">
-                    <h1>Welcome to Our Event Venue</h1>
+                    <h1 class="sacramento-regular">Welcome to Our Event Venue</h1>
                     <p>Indulge in the art of gastronomy as we curate a symphony of flavors, ensuring your event is a
                         culinary masterpiece.</p>
                     <button class="about">Read More</button>
@@ -64,9 +76,7 @@
             <!-- Venue Carousel -->
             <div id="venueCarousel" class="carousel">
                 <div class="venue-item">
-                    <div class="slide-image" data-background="assets/images/venue1.jpg"
-                        style="background: url(&quot;assets/images/venue1.jpg&quot;);"></div>
-                    <!-- <img src="assets/images/venue1.jpg" alt="Venue 1"> -->
+                    <img src="assets/images/venue1.jpg" alt="Venue 1">
                     <h3>Venue 1</h3>
                     <p>Description of Venue 1</p>
                 </div>
@@ -100,67 +110,81 @@
             we turn moments into memories, one exquisite bite at a time. Elevate your event with flavors that linger
             long after the last plate is cleared.</p>
         <!-- Add more information about your company -->
+
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why is the moon
+                            sometimes out during the day?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
+                            viverra suspendisse potenti.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Why is the sky
+                            blue?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
+                            viverra suspendisse potenti.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Will we ever
+                            discover aliens?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
+                            viverra suspendisse potenti.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">How much does
+                            the Earth weigh?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
+                            viverra suspendisse potenti.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How do airplanes
+                            stay up?</span><span class="icon" aria-hidden="true"></span></button>
+                    <div class="accordion-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
+                            viverra suspendisse potenti.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="contact">
-                <i class="fa-solid fa-phone-volume"></i>
-                <span>+1234567890</span>
-                <button onclick="openChat()">Contact us</button>
+                <button disabled>
+                    <img src="assets/icons/phone-white.png" alt=""><span>+1 (212) 658-3916</span>
+                </button>
+                <!-- href="sms://+15558675309/&body=" + encodeURI(Good afternoon. We are planning an event and would like to inquire about your services. Could we please discuss menu options and availability at your earliest convenience? Thank you.); -->
+                <a class="button"
+                    href="sms://+16462609586/&body=Good%20afternoon.%20We%20are%20planning%20an%20event%20and%20would%20like%20to%20inquire%20about%20your%20services.%20Can%20we%20please%20discuss%20menu%20options%20and%20availability%20at%20your%20earliest%20convenience?%20Thank%20you.">
+                    <img src="assets/icons/i-messages.png" alt=""><span>Send SMS</span>
+                </a>
+                <button onclick="openChat()"><img src="assets/icons/whatsapp.png" alt=""><span>WhatsApp</span></button>
             </div>
             <div class="location">
-                <i class="fa-solid fa-location-dot"></i>
-                <span>New York</span>
+                <img src="assets/icons/location.png" alt="">
+                <span>New York City, NY</span>
             </div>
         </div>
     </footer>
-
-
-    <!-- Add your JavaScript code here for carousel functionality and WhatsApp chat -->
-
-    <script>
-        // JavaScript for image carousel
-        let imgwdsIndex = 0;
-        const imgwds = document.querySelectorAll('#imageCarousel .imgwds');
-        const totalImgwds = imgwds.length;
-
-        function showImgwds(index) {
-            imgwds.forEach(imgwds => imgwds.style.display = 'none'); // Hide all imgwds
-            imgwds[index].style.display = 'block'; // Show the selected imgwds
-        }
-
-        function nextImgwds() {
-            imgwdsIndex = (imgwdsIndex + 1) % totalImgwds;
-            showImgwds(imgwdsIndex);
-        }
-
-        // Show the first imgwds initially
-        showImgwds(imgwdsIndex);
-
-        // Change imgwds every 3 seconds
-        setInterval(nextImgwds, 3000);
-
-        // JavaScript for WhatsApp chat
-        function openChat() {
-            // Change 'yourPhoneNumber' to your actual WhatsApp number
-            window.open('https://wa.me/yourPhoneNumber', '_blank');
-        }
-
-        window.addEventListener('scroll', function () {
-            var header = document.querySelector('header');
-            var navbar = document.querySelector('nav');
-
-            if (window.scrollY > header.offsetHeight) {
-                navbar.classList.add('fixed');
-            } else {
-                navbar.classList.remove('fixed');
-            }
-        });
-
-    </script>
-
 </body>
 
 </html>
