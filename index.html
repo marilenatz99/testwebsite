@@ -14,6 +14,9 @@
     <!-- Header -->
     <header id="header">
         <nav>
+            <a href="javascript:void(0);" class="navIcon" onclick="navIcon()">
+                <img src="assets/icons/navbar.png" alt="">
+            </a>
             <div class="logo">
                 <img src="assets/images/logo.png" alt="Logo">
             </div>
@@ -39,7 +42,7 @@
                 <div class="slide-image" data-background="assets/images/food1.jpg"
                     style="background: url(&quot;assets/images/food1.jpg&quot;);"></div>
                 <div class="descr">
-                    <h1 class="sacramento-regular">Welcome to Our Event Venue</h1>
+                    <h1 class=".dancing-script-font">Welcome to Our Event Venue</h1>
                     <p>Experience unparalleled culinary excellence, meticulously tailored for your special occasions.
                     </p>
                     <button class="about">Read More</button>
@@ -49,7 +52,7 @@
                 <div class="slide-image" data-background="assets/images/food2.jpg"
                     style="background: url(&quot;assets/images/food2.jpg&quot;);"></div>
                 <div class="descr">
-                    <h1 class="sacramento-regular">Welcome to Our Event Venue</h1>
+                    <h1 class=".dancing-script-font">Welcome to Our Event Venue</h1>
                     <p>Elevate your gatherings with our diverse array of gourmet offerings, meticulously crafted to
                         delight
                         every palate.</p>
@@ -60,7 +63,7 @@
                 <div class="slide-image" data-background="assets/images/food3.jpg"
                     style="background: url(&quot;assets/images/food3.jpg&quot;);"></div>
                 <div class="descr">
-                    <h1 class="sacramento-regular">Welcome to Our Event Venue</h1>
+                    <h1 class=".dancing-script-font">Welcome to Our Event Venue</h1>
                     <p>Indulge in the art of gastronomy as we curate a symphony of flavors, ensuring your event is a
                         culinary masterpiece.</p>
                     <button class="about">Read More</button>
@@ -111,57 +114,69 @@
             long after the last plate is cleared.</p>
         <!-- Add more information about your company -->
 
-        <div class="container">
+        <div class="wrapper">
             <h2>Frequently Asked Questions</h2>
-            <div class="accordion">
-                <div class="accordion-item">
-                    <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Why is the moon
-                            sometimes out during the day?</span><span class="icon" aria-hidden="true"></span></button>
-                    <div class="accordion-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                            viverra suspendisse potenti.</p>
-                    </div>
+
+            <div class="faq">
+                <button class="accordion">What services do you offer?<img width="25" height="25"
+                        src="https://img.icons8.com/ios-glyphs/100/circled-chevron-down.png"
+                        alt="circled-chevron-down" /></button>
+                <div class="panel">
+                    <p>We offer a wide range of event planning services, including venue selection, catering,
+                        decoration,
+                        entertainment, and event coordination. Whether you are planning a wedding, corporate event, or
+                        private
+                        party, our team is here to help make your event a success.</p>
                 </div>
-                <div class="accordion-item">
-                    <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Why is the sky
-                            blue?</span><span class="icon" aria-hidden="true"></span></button>
-                    <div class="accordion-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                            viverra suspendisse potenti.</p>
-                    </div>
+            </div>
+            <div class="faq">
+                <button class="accordion">How can I book your services?<img width="25" height="25"
+                        src="https://img.icons8.com/ios-glyphs/100/circled-chevron-down.png"
+                        alt="circled-chevron-down" /></button>
+                <div class="panel">
+                    <p>To book our services, you can contact us through our website’s contact form, email us directly at
+                        [your email address], or call us at [your phone number]. One of our representatives will get
+                        back to you within 24 hours to discuss your event details and schedule a consultation.</p>
                 </div>
-                <div class="accordion-item">
-                    <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Will we ever
-                            discover aliens?</span><span class="icon" aria-hidden="true"></span></button>
-                    <div class="accordion-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                            viverra suspendisse potenti.</p>
-                    </div>
+            </div>
+            <div class="faq">
+                <button class="accordion">What is your pricing structure?<img width="25" height="25"
+                        src="https://img.icons8.com/ios-glyphs/100/circled-chevron-down.png"
+                        alt="circled-chevron-down" /></button>
+                <div class="panel">
+                    <p>Our pricing varies depending on the type and scale of the event, as well as the specific services
+                        required. We offer customizable packages to fit different budgets. Please contact us for a
+                        detailed quote based on your event needs.</p>
                 </div>
-                <div class="accordion-item">
-                    <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">How much does
-                            the Earth weigh?</span><span class="icon" aria-hidden="true"></span></button>
-                    <div class="accordion-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                            viverra suspendisse potenti.</p>
-                    </div>
+            </div>
+            <div class="faq">
+                <button class="accordion">Do you offer customizable event packages?<img width="25" height="25"
+                        src="https://img.icons8.com/ios-glyphs/100/circled-chevron-down.png"
+                        alt="circled-chevron-down" /></button>
+                <div class="panel">
+                    <p>Yes, we understand that every event is unique. We offer customizable packages that can be
+                        tailored to fit your specific requirements and preferences. During our consultation, we will
+                        discuss your vision and work with you to create a personalized event plan.</p>
                 </div>
-                <div class="accordion-item">
-                    <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">How do airplanes
-                            stay up?</span><span class="icon" aria-hidden="true"></span></button>
-                    <div class="accordion-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Elementum sagittis vitae et leo duis ut. Ut tortor pretium
-                            viverra suspendisse potenti.</p>
-                    </div>
+            </div>
+            <div class="faq">
+                <button class="accordion">What safety measures do you have in place for events?<img width="25"
+                        height="25" src="https://img.icons8.com/ios-glyphs/100/circled-chevron-down.png"
+                        alt="circled-chevron-down" /></button>
+                <div class="panel">
+                    <p>The safety and well-being of our clients and guests are our top priority. We follow all local
+                        health guidelines and protocols, including sanitation, social distancing, and the use of
+                        personal protective equipment where necessary. We also have contingency plans in place to handle
+                        emergencies and unexpected situations.</p>
                 </div>
             </div>
         </div>
 
+
+        <!-- <img width="25" height="25" src="https://img.icons8.com/ios-glyphs/30/filled-plus-2-math.png"
+            alt="filled-plus-2-math" />
+        <img width="25" height="25" src="https://img.icons8.com/ios-glyphs/30/filled-minus-2-math.png"
+            alt="filled-minus-2-math" /> -->
 
     </section>
 
@@ -170,7 +185,7 @@
         <div class="container">
             <div class="contact">
                 <button disabled>
-                    <img src="assets/icons/phone-white.png" alt=""><span>+1 (212) 658-3916</span>
+                    <img src="assets/icons/phone.png" alt=""><span>+1 (212) 658-3916</span>
                 </button>
                 <!-- href="sms://+15558675309/&body=" + encodeURI(Good afternoon. We are planning an event and would like to inquire about your services. Could we please discuss menu options and availability at your earliest convenience? Thank you.); -->
                 <a class="button"

@@ -1,14 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 /* Global styles */
-@font-face {
-    font-family: 'Dancing Script';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('assets/style/fonts/Dancing_Script/static/DancingScript-Regular.ttf') format('truetype');
-}
-  
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+} 
+
 html {
     scroll-behavior: smooth;
 }
@@ -20,43 +18,69 @@ body {
 }
 
 .container {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+}
+
+p, h1:not(.dancing-script-font), h2, h3, span, button {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, h2 {
+    padding: 20px;
+    letter-spacing: 3px;
+}
+
+p {
+    font-size: 16px;
+}
+
+.dancing-script-font {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
 }
 
 /* Header styles */
 header {
     text-align: center;
     position: relative;
+    overflow: auto;
 }
 
 /* Header Navbar styles */
 nav {
-    color: #fff;
+    color: white;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-evenly;
+    padding: 10px 20px;
     position: fixed;
-    z-index: 2;
-    overflow: hidden;
+    z-index: 1;
     width: 100%;
-}
+  }
 
-.nav-links {
-    list-style: none;
+  ul {
     display: flex;
+    list-style: none;
+    padding: 0;
+    margin-right: 20px;
     align-items: center;
-}
-
-.nav-links li {
+  }
+  
+  ul li {
     margin: 20px;
-}
+  }
 
 .nav-links li a {
     text-decoration: none;
     color: #fff;
     padding: 15px 30px;
+    font-size: 18px !important;
 }
 
 .nav-links li .contact a {
@@ -73,6 +97,14 @@ nav {
 
 .logo img {
     height: 150px;
+}
+
+nav .navIcon {
+    display: none;
+}
+
+.navIcon img {
+    width: 50px;
 }
 
 .fixed {
@@ -99,10 +131,10 @@ header .slide-image {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Set width to fill the container */
-    height: 100%; /* Set height to fill the container */
-    background-size: contain; /* Ensure the background image covers the entire container */
-    background-position: center; /* Center the background image */
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
     transition: opacity 0.5s ease;
     box-shadow: 0px 0px 0px 5000px #0000009e inset;
 }
@@ -130,12 +162,12 @@ header .slide-image {
 
 .imgwds .descr h1 {
     margin-bottom: 10px;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 .imgwds .descr p {
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .imgwds button.about {
@@ -204,101 +236,62 @@ header .slide-image {
 }
 
 #about {
-    * {
-    box-sizing: border-box;
-    }
-    *::before, *::after {
-    box-sizing: border-box;
-    }
-
-    .container {
-    margin: 0 auto;
-    padding: 4rem;
-    width: 48rem;
+    .wrapper {
+        max-width: 75%;
+        margin: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
-    .accordion .accordion-item {
-    border-bottom: 1px solid #e5e5e5;
+    .wrapper > p,
+    .wrapper > h2 {
+        font-size: 1.5rem 0;
+        text-align: center;
     }
-    .accordion .accordion-item button[aria-expanded=true] {
-    border-bottom: 1px solid #ff8fab;
+
+    .accordion {
+        cursor: pointer;
+        font-size: 19px;
+        width: 100%;
+        padding: 20px 25px;
+        border: none;
+        border-bottom: solid;
+        border-bottom-color: rgba(0,0,0,0.2);
+        border-radius: 10%;
+        outline: none;
+        transition: 0.4s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        background-color: #fff;
     }
-    .accordion button {
-    position: relative;
-    display: block;
-    text-align: left;
-    width: 100%;
-    padding: 1em 0;
-    color: #333;
-    font-size: 1.15rem;
-    border: none;
-    background: none;
-    outline: none;
+
+    .active, .accordion:hover {
+        color: #ff8fab;
     }
-    .accordion button:hover, .accordion button:focus {
-    cursor: pointer;
-    color: #ff8fab;
+
+    .panel {
+        padding: 10px 20px;
+        overflow: hidden;
+        display: none;
     }
-    .accordion button:hover::after, .accordion button:focus::after {
-    cursor: pointer;
-    color: #333;
-    border: 1px solid #ff8fab;
+
+    .panel p {
+        color: black;
+        line-height: 1.4;
     }
-    .accordion button .accordion-title {
-    padding: 1em 1.5em 1em 0;
+
+    .faq {
+        margin: 10px 0;
     }
-    .accordion button .icon {
-    display: inline-block;
-    position: absolute;
-    top: 18px;
-    right: 0;
-    width: 22px;
-    height: 22px;
-    border: 1px solid;
-    border-radius: 22px;
+
+    .faq.active {
+        border: none;
     }
-    .accordion button .icon::before {
-    display: block;
-    position: absolute;
-    content: "";
-    top: 9px;
-    left: 5px;
-    width: 10px;
-    height: 2px;
-    background: currentColor;
-    }
-    .accordion button .icon::after {
-    display: block;
-    position: absolute;
-    content: "";
-    top: 5px;
-    left: 9px;
-    width: 2px;
-    height: 10px;
-    background: currentColor;
-    }
-    .accordion button[aria-expanded=true] {
-    color: #ff8fab;
-    }
-    .accordion button[aria-expanded=true] .icon::after {
-    width: 0;
-    }
-    .accordion button[aria-expanded=true] + .accordion-content {
-    opacity: 1;
-    max-height: 9em;
-    transition: all 200ms linear;
-    will-change: opacity, max-height;
-    }
-    .accordion .accordion-content {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 200ms linear, max-height 200ms linear;
-    will-change: opacity, max-height;
-    }
-    .accordion .accordion-content p {
-    font-size: 1rem;
-    margin: 2em 0;
+
+    .rotate-icon {
+        transform: rotate(180deg);
     }
 }
 
@@ -356,43 +349,76 @@ footer .container {
     margin: 10px;
 }
 
-/* Icon styles */
-i {
-    margin-right: 10px; /* Adjust spacing between icon and text */
-}
-
-
-/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    #venueCarousel {
+    #venueCarousel, footer, .contact {
         display: grid;
     }
-}
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    #venueCarousel {
-        display: grid;
+    #imageCarousel, #about, nav, footer{
+       width: 100%; 
+       max-width: 600px;
     }
-}
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-    #venueCarousel {
-        display: grid;
+    .navIcon {
+        display: block !important;
+        order: 1;
+        margin-right: 50px;
+        border-radius: 10%;
+        border: 1px solid #fff;
     }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    #venueCarousel {
+    
+    ul {
+        position: fixed;
+        right: -100%;
+        width: 100%;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s;
+        background: rgba(0,0,0,0.5);
+        margin-top: -0.5px;
+        margin-right: 0;
+    }
+
+    .responsive ul {
+        right: 0;
     }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 992px) {
     #venueCarousel {
-        display: flex;
+        display: grid;
     }
+
+    #imageCarousel, #about, nav, footer{
+        width: 100%; 
+        max-width: 992px;
+    }
+
+    .navIcon {
+        display: block !important;
+        order: 1;
+        margin-right: 50px;
+        border-radius: 10%;
+        border: 1px solid #fff;
+      }
+    
+      ul {
+        position: fixed;
+        right: -100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s;
+        background: rgba(0,0,0,0.5);
+        margin-top: -0.5px;
+        margin-right: 0;
+      }
+
+      .responsive ul {
+        right: 0;
+      }
 }

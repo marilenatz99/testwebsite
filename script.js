@@ -1,3 +1,13 @@
+// Open responsive sidebar
+function navIcon() {
+    var navbar = document.querySelector('nav');
+
+
+    navbar.classList.toggle('responsive');
+    document.getElementsByClassName("nav-links")[0].style.top = navbar.offsetHeight + 'px';
+}
+
+
 // Image carousel
 let imgwdsIndex = 0;
 const imgwds = document.querySelectorAll('#imageCarousel .imgwds');
@@ -63,20 +73,20 @@ console.log(deviceType);
 
 
 // FAQ section
-const items = document.querySelectorAll(".accordion button");
+var acc = document.getElementsByClassName("accordion");
 
-function toggleAccordion() {
-    const itemToggle = this.getAttribute('aria-expanded');
+for (let i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        this.lastChild.classList.toggle("rotate-icon");
+        this.parentElement.classList.toggle("active");
 
-    for (i = 0; i < items.length; i++) {
-        items[i].setAttribute('aria-expanded', 'false');
-    }
-
-    if (itemToggle == 'false') {
-        this.setAttribute('aria-expanded', 'true');
-    }
+        var panel = this.nextElementSibling;
+        if (panel.style.display === 'block') {
+            panel.style.display = 'none';
+        }
+        else {
+            panel.style.display = 'block';
+        }
+    })
 }
-
-items.forEach(item => item.addEventListener('click', toggleAccordion));
-
-
