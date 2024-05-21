@@ -250,6 +250,7 @@ header .slide-image {
     }
 
     .accordion {
+        color: black;
         cursor: pointer;
         font-size: 19px;
         width: 100%;
@@ -269,6 +270,10 @@ header .slide-image {
 
     .active, .accordion:hover {
         color: #ff8fab;
+    }
+
+    .active, .accordion:hover::after {
+        color: black;
     }
 
     .panel {
