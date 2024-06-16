@@ -1,10 +1,10 @@
 // Open responsive sidebar
 function navIcon() {
     var navbar = document.querySelector('nav');
-
-
     navbar.classList.toggle('responsive');
-    document.getElementsByClassName("nav-links")[0].style.top = navbar.offsetHeight + 'px';
+
+    var height = navbar.offsetHeight + 0.5;
+    document.getElementsByClassName("nav-links")[0].style.top = height + 'px';
 }
 
 
@@ -47,13 +47,11 @@ window.addEventListener('scroll', function () {
 
 // WhatsApp chat
 function openChat() {
-    // Change 'yourPhoneNumber' to your actual WhatsApp number
     window.open('https://wa.me/yourPhoneNumber', '_blank');
 }
 
 // SMS message
 function getMobileOperatingSystem() {
-    // Credit: Ryan kulp @ https://www.quora.com/Has-anyone-successfully-preset-body-copy-within-a-tap-to-SMS-link/answer/Ryan-Kulp
     var userAgent = navigator.userAgent || navigator.userAgentData.platform || window.opera;
 
     if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
@@ -90,3 +88,68 @@ for (let i = 0; i < acc.length; i++) {
         }
     })
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+    const formEndpoint = 'https://formspree.io/f/xeqybydd';
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // Collect form data
+        const formData = new FormData(form);
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+
+        try {
+            // Send form data using Fetch API
+            const response = await fetch(formEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formObject)
+            });
+
+            if (response.ok) {
+                formStatus.textContent = 'Thank you for your message. We will get back to you soon!';
+                formStatus.style.color = 'green';
+                form.reset();
+            } else {
+                formStatus.textContent = 'Oops! There was a problem submitting your form. Please try again.';
+                formStatus.style.color = 'red';
+            }
+        } catch (error) {
+            formStatus.textContent = 'Oops! There was a problem submitting your form. Please try again.';
+            formStatus.style.color = 'red';
+        }
+    });
+
+    // Initialize maps
+    var map1 = L.map('mapContainer1').setView([40.7128, -74.0060], 10); // New York City
+    var map2 = L.map('mapContainer2').setView([41.1220, -73.7949], 10); // Westchester
+    var map3 = L.map('mapContainer3').setView([41.6032, -73.0877], 10); // Connecticut
+
+    // Add tile layers to the maps
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+    }).addTo(map1);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+    }).addTo(map2);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
+    }).addTo(map3);
+
+    // Optional: Add markers for each location
+    var nyMarker = L.marker([40.7128, -74.0060]).addTo(map1).bindPopup('New York, NY');
+    var westchesterMarker = L.marker([41.1220, -73.7949]).addTo(map2).bindPopup('Westchester, NY');
+    var connecticutMarker = L.marker([41.6032, -73.0877]).addTo(map3).bindPopup('Connecticut');
+
+});
+

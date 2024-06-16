@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="#">
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="shortcut icon" href="#" />
+    <link href="assets/style/styles.css" rel="stylesheet" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script defer src="script.js"></script>
     <title>Event Venue Website</title>
 </head>
@@ -15,22 +19,23 @@
     <header id="header">
         <nav>
             <a href="javascript:void(0);" class="navIcon" onclick="navIcon()">
-                <img src="assets/icons/navbar.png" alt="">
+                <img src="assets/icons/navbar.png" alt="" />
             </a>
             <div class="logo">
-                <img src="assets/images/logo.png" alt="Logo">
+                <img src="assets/images/logo.png" alt="Logo" />
             </div>
             <ul class="nav-links">
                 <li><a href="#header">Home</a></li>
-                <li><a href="#venue">Venues</a></li>
                 <li><a href="#about">About</a></li>
-                <!-- <li><a href="#services">Services</a></li> -->
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#map">Locations</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
                     <div class="contact">
                         <a class="button txt-ios"
                             href="sms://+/&body=Good%20afternoon.%20We%20are%20planning%20an%20event%20and%20would%20like%20to%20inquire%20about%20your%20services.%20Can%20we%20please%20discuss%20menu%20options%20and%20availability%20at%20your%20earliest%20convenience?%20Thank%20you.">
-                            <img src="assets/icons/i-messages.png" alt=""><span>+1 (212)658-3916</span>
+                            <img src="assets/icons/i-messages.png" alt="i-messages"><span>Send message</span>
                         </a>
                     </div>
                 </li>
@@ -40,17 +45,17 @@
         <div id="imageCarousel" class="carousel">
             <div class="imgwds">
                 <div class="slide-image" data-background="assets/images/food1.jpg"
-                    style="background: url(&quot;assets/images/food1.jpg&quot;);"></div>
+                    style="background: url(&quot;assets/images/banner1.jpg&quot;);"></div>
                 <div class="descr">
                     <h1 class=".dancing-script-font">Welcome to Our Event Venue</h1>
                     <p>Experience unparalleled culinary excellence, meticulously tailored for your special occasions.
                     </p>
-                    <button class="about">Read More</button>
+                    <button class="about"><a href="#about">Read More</a></button>
                 </div>
             </div>
             <div class="imgwds">
                 <div class="slide-image" data-background="assets/images/food2.jpg"
-                    style="background: url(&quot;assets/images/food2.jpg&quot;);"></div>
+                    style="background: url(&quot;assets/images/banner2.jpg&quot;);"></div>
                 <div class="descr">
                     <h1 class=".dancing-script-font">Welcome to Our Event Venue</h1>
                     <p>Elevate your gatherings with our diverse array of gourmet offerings, meticulously crafted to
@@ -61,7 +66,7 @@
             </div>
             <div class="imgwds">
                 <div class="slide-image" data-background="assets/images/food3.jpg"
-                    style="background: url(&quot;assets/images/food3.jpg&quot;);"></div>
+                    style="background: url(&quot;assets/images/banner3.jpg&quot;);"></div>
                 <div class="descr">
                     <h1 class=".dancing-script-font">Welcome to Our Event Venue</h1>
                     <p>Indulge in the art of gastronomy as we curate a symphony of flavors, ensuring your event is a
@@ -72,50 +77,119 @@
         </div>
     </header>
 
-    <!-- Venue Carousel Section -->
-    <section id="venue">
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="assets/images/team.jpg" alt="About Us" />
+            </div>
+            <div class="about-text">
+                <p>Indulge in culinary excellence, where every dish tells a story. From intimate gatherings to grand
+                    celebrations, our catering company crafts unforgettable experiences. With passion as our secret
+                    ingredient,
+                    we turn moments into memories, one exquisite bite at a time. Elevate your event with flavors that
+                    linger
+                    long after the last plate is cleared.</p>
+                <a href="#FAQ" class="about">Learn more</a>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="services">
         <div class="container">
-            <h2>Venue Options</h2>
-            <!-- Venue Carousel -->
-            <div id="venueCarousel" class="carousel">
-                <div class="venue-item">
-                    <img src="assets/images/venue1.jpg" alt="Venue 1">
-                    <h3>Venue 1</h3>
-                    <p>Description of Venue 1</p>
+            <h2>Our Services</h2>
+            <div class="services-content">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <img src="assets/images/service5.jpg" alt="Services Image" />
+                    <p>At our catering company, we offer a range of services to make your event unforgettable.</p>
+                    <p>From meticulous event planning to exquisite culinary experiences, we cover all aspects to ensure
+                        your event is a success.</p>
                 </div>
-                <div class="venue-item">
-                    <img src="assets/images/venue2.jpg" alt="Venue 2">
-                    <h3>Venue 2</h3>
-                    <p>Description of Venue 2</p>
+                <!-- Right Column -->
+                <div class="right-column">
+                    <h3>Our Comprehensive Services</h3>
+                    <div class="icon-section">
+                        <div class="icon-item">
+                            <img src="assets/icons/planner.png" alt="Event Planning" />
+                            <span>Event Planning</span>
+                        </div>
+                        <div class="icon-item">
+                            <img src="assets/icons/catering.png" alt="Catering" />
+                            <span>Catering</span>
+                        </div>
+                        <div class="icon-item">
+                            <img src="assets/icons/festival.png" alt="Decoration" />
+                            <span>Decoration</span>
+                        </div>
+                        <div class="icon-item">
+                            <img src="assets/icons/party.png" alt="Entertainment" />
+                            <span>Entertainment</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="venue-item">
-                    <img src="assets/images/venue3.jpg" alt="Venue 3">
-                    <h3>Venue 3</h3>
-                    <p>Description of Venue 3</p>
-                </div>
-                <!-- Add more venue items as needed -->
+
             </div>
         </div>
     </section>
 
 
     <!-- Team Section -->
-    <!-- <section id="team">
-        <h2>Our Team</h2> -->
-    <!-- Add your team members here -->
-    <!-- </section> -->
+    <section id="team">
+        <div class="container">
+            <h2>Meet Our Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="assets/images/team-member1.jpeg" alt="Team Member 1" />
+                    <h4>Jane Doe</h4>
+                    <p>CEO</p>
+                </div>
+                <div class="team-member">
+                    <img src="assets/images/team-member3.jpeg" alt="Team Member 3" />
+                    <h4>Mary Johnson</h4>
+                    <p>Event Planner</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- About Us Section -->
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Indulge in culinary excellence, where every dish tells a story. From intimate gatherings to grand
-            celebrations, our catering company crafts unforgettable experiences. With passion as our secret ingredient,
-            we turn moments into memories, one exquisite bite at a time. Elevate your event with flavors that linger
-            long after the last plate is cleared.</p>
-        <!-- Add more information about your company -->
+    <!-- Map Section -->
+    <section id="map">
+        <h2>Our Locations</h2>
 
+        <div class="location-container">
+            <div class="location-item">
+                <div id="mapContainer1" class="map-container"></div>
+                <div class="location">
+                    <img src="assets/icons/location.png" alt="" />
+                    <span>New York City, NY</span>
+                </div>
+            </div>
+
+            <div class="location-item">
+                <div id="mapContainer2" class="map-container"></div>
+                <div class="location">
+                    <img src="assets/icons/location.png" alt="" />
+                    <span>Westchester, NY</span>
+                </div>
+            </div>
+
+            <div class="location-item">
+                <div id="mapContainer3" class="map-container"></div>
+                <div class="location">
+                    <img src="assets/icons/location.png" alt="" />
+                    <span>Connecticut</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="FAQ">
         <div class="wrapper">
-            <h2>Frequently Asked Questions</h2>
+            <h3>Frequently Asked Questions</h3>
 
             <div class="faq">
                 <button class="accordion">What services do you offer?<img width="25" height="25"
@@ -171,32 +245,59 @@
                 </div>
             </div>
         </div>
+    </section>
 
-
-        <!-- <img width="25" height="25" src="https://img.icons8.com/ios-glyphs/30/filled-plus-2-math.png"
-            alt="filled-plus-2-math" />
-        <img width="25" height="25" src="https://img.icons8.com/ios-glyphs/30/filled-minus-2-math.png"
-            alt="filled-minus-2-math" /> -->
-
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="form-status"></div>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="contact">
-                <button disabled>
-                    <img src="assets/icons/phone.png" alt=""><span>+1 (212) 658-3916</span>
+                <button onclick="window.open('tel:900300400');">
+                    <img src="assets/icons/phone-white.png" alt="" />
+                    <span>+1 (212) 658-3916</span>
+                    <img src="assets/icons/flag(3).png" alt="" />
+                </button>
+                <button onclick="window.open('tel:900300400');">
+                    <img src="assets/icons/phone-white.png" alt="" />
+                    <span>+1 (212) 658-3916</span>
+                    <div class="flag-icons">
+                        <img src="assets/icons/flag(3).png" alt="" /><img src="assets/icons/flag.png" alt="" /><img
+                            src="assets/icons/flag(1).png" alt="" /><img src="assets/icons/flag(2).png" alt="" />
+                    </div>
                 </button>
                 <!-- href="sms://+15558675309/&body=" + encodeURI(Good afternoon. We are planning an event and would like to inquire about your services. Could we please discuss menu options and availability at your earliest convenience? Thank you.); -->
                 <a class="button"
                     href="sms://+16462609586/&body=Good%20afternoon.%20We%20are%20planning%20an%20event%20and%20would%20like%20to%20inquire%20about%20your%20services.%20Can%20we%20please%20discuss%20menu%20options%20and%20availability%20at%20your%20earliest%20convenience?%20Thank%20you.">
-                    <img src="assets/icons/i-messages.png" alt=""><span>Send SMS</span>
+                    <img src="assets/icons/i-messages.png" alt="" /><span>Send SMS</span>
                 </a>
-                <button onclick="openChat()"><img src="assets/icons/whatsapp.png" alt=""><span>WhatsApp</span></button>
-            </div>
-            <div class="location">
-                <img src="assets/icons/location.png" alt="">
-                <span>New York City, NY</span>
+                <button onclick="openChat()"><img src="assets/icons/whatsapp.png"
+                        alt="" /><span>WhatsApp</span></button>
             </div>
         </div>
     </footer>
