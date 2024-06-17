@@ -1,11 +1,26 @@
 // Open responsive sidebar
+// function navIcon() {
+//     var navbar = document.querySelector('nav');
+//     navbar.classList.toggle('responsive');
+
+//     var height = navbar.offsetHeight + 0.5;
+//     document.getElementsByClassName("nav-links")[0].style.top = height + 'px';
+// }
+
 function navIcon() {
     var navbar = document.querySelector('nav');
-    navbar.classList.toggle('responsive');
+    var navLinks = document.querySelector('.nav-links');
 
-    var height = navbar.offsetHeight + 0.5;
-    document.getElementsByClassName("nav-links")[0].style.top = height + 'px';
+    navLinks.classList.toggle('responsive');
+
+    var height = navbar.offsetHeight;
+    if (navLinks.classList.contains('responsive')) {
+        navLinks.style.top = height + 'px';
+    } else {
+        navLinks.style.top = 'initial';
+    }
 }
+
 
 
 // Image carousel

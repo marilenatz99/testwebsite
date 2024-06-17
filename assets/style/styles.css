@@ -128,6 +128,7 @@ nav .navIcon {
     background-color: rgba(0,0,0,0.5) !important;
 }
 
+
 /* Header Carousel styles */
 header .carousel {
     position: relative;
@@ -647,50 +648,6 @@ button[type="submit"]:hover {
         display: grid;
     }
 
-    #imageCarousel, #about, nav, footer{
-       width: 100%; 
-       max-width: 600px;
-    }
-
-    .navIcon {
-        display: block !important;
-        order: 1;
-        margin-right: 50px;
-        border-radius: 10%;
-        border: 1px solid #fff;
-    }
-    
-    ul {
-        position: fixed;
-        right: -100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s;
-        background: rgba(0,0,0,0.5);
-        margin-top: -0.5px;
-        margin-right: 0;
-    }
-
-    .responsive ul {
-        right: 0;
-    }
-
-    .team-members {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .team-member {
-        width: 80%;
-    }
-
-    .location-item {
-        width: calc(75%);
-    }
-
     .about-content {
         flex-direction: column;
     }
@@ -708,7 +665,7 @@ button[type="submit"]:hover {
 
     #imageCarousel, #about, nav, footer{
         width: 100%; 
-        max-width: 992px;
+        max-width: 100%;
     }
 
     .navIcon {
@@ -720,27 +677,28 @@ button[type="submit"]:hover {
     }
 
     .nav-links {
-        padding: 20px;
-    }
-    
-    ul {
-        position: fixed;
-        right: -100%;
-        width: 100%;
-        display: flex;
+        display: none;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.3s;
+        position: absolute;
+        width: 100%;
         background: rgba(0,0,0,0.5);
-        margin-top: -0.5px;
-        margin-right: 0;
         right: 0;
+        left: 0;
+        padding: 20px 0;
     }
 
-    .responsive ul {
-        right: 0;
-      }
+    .nav-links.responsive {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .navIcon {
+        display: block;
+    }
 
     .team-members {
         flex-direction: column;
