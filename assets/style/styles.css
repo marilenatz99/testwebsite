@@ -764,3 +764,33 @@ button[type="submit"]:hover {
         max-width: 60%;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .imgwds .descr h1 {
+        font-size: 5vw;
+    }
+
+    .imgwds .descr p {
+        font-size: 3vw;
+    }
+
+    .imgwds button.about {
+        padding: 10px 20px;
+        font-size: 3vw;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .imgwds .descr h1 {
+        font-size: 6vw;
+    }
+
+    .imgwds .descr p {
+        font-size: 4vw;
+    }
+
+    .imgwds button.about {
+        padding: 8px 16px;
+        font-size: 4vw;
+    }
+}

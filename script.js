@@ -1,12 +1,4 @@
 // Open responsive sidebar
-// function navIcon() {
-//     var navbar = document.querySelector('nav');
-//     navbar.classList.toggle('responsive');
-
-//     var height = navbar.offsetHeight + 0.5;
-//     document.getElementsByClassName("nav-links")[0].style.top = height + 'px';
-// }
-
 function navIcon() {
     var navbar = document.querySelector('nav');
     var navLinks = document.querySelector('.nav-links');
@@ -22,27 +14,79 @@ function navIcon() {
 }
 
 
+// Data for the slides
+const slides = [
+    {
+        background: "assets/images/banner1.jpg",
+        title: "Welcome to Our Event Venue",
+        description: "Experience unparalleled culinary excellence, meticulously tailored for your special occasions.",
+        link: "#about"
+    },
+    {
+        background: "assets/images/banner2.jpg",
+        title: "Welcome to Our Event Venue",
+        description: "Elevate your gatherings with our diverse array of gourmet offerings, meticulously crafted to delight every palate.",
+        link: "#about"
+    },
+    {
+        background: "assets/images/banner3.jpg",
+        title: "Welcome to Our Event Venue",
+        description: "Indulge in the art of gastronomy as we curate a symphony of flavors, ensuring your event is a culinary masterpiece.",
+        link: "#about"
+    },
+    {
+        background: "assets/images/banner4.jpg",
+        title: "Welcome to Our Event Venue",
+        description: "Celebrate with our exceptional event services, designed to make your special day unforgettable.",
+        link: "#about"
+    },
+    {
+        background: "assets/images/banner5.jpg",
+        title: "Welcome to Our Event Venue",
+        description: "Discover the perfect blend of elegance and creativity with our bespoke event solutions.",
+        link: "#about"
+    }
+];
 
-// Image carousel
-let imgwdsIndex = 0;
-const imgwds = document.querySelectorAll('#imageCarousel .imgwds');
-const totalImgwds = imgwds.length;
+// Function to create the slides
+function createSlides() {
+    const carousel = document.getElementById('imageCarousel');
 
-function showImgwds(index) {
-    imgwds.forEach(imgwds => imgwds.style.display = 'none'); // Hide all imgwds
-    imgwds[index].style.display = 'block'; // Show the selected imgwds
+    slides.forEach(slide => {
+        const slideContainer = document.createElement('div');
+        slideContainer.classList.add('imgwds');
+
+        const slideImage = document.createElement('div');
+        slideImage.classList.add('slide-image');
+        slideImage.setAttribute('data-background', slide.background);
+        slideImage.style.background = `url('${slide.background}') center center / cover no-repeat`;
+
+        const slideDescr = document.createElement('div');
+        slideDescr.classList.add('descr');
+
+        const slideTitle = document.createElement('h1');
+        slideTitle.classList.add('dancing-script-font');
+        slideTitle.innerText = slide.title;
+
+        const slideText = document.createElement('p');
+        slideText.innerText = slide.description;
+
+        const slideButton = document.createElement('button');
+        slideButton.classList.add('about');
+
+        const slideLink = document.createElement('a');
+        slideLink.setAttribute('href', slide.link);
+        slideLink.innerText = 'Read More';
+
+        slideButton.appendChild(slideLink);
+        slideDescr.appendChild(slideTitle);
+        slideDescr.appendChild(slideText);
+        slideDescr.appendChild(slideButton);
+        slideContainer.appendChild(slideImage);
+        slideContainer.appendChild(slideDescr);
+        carousel.appendChild(slideContainer);
+    });
 }
-
-function nextImgwds() {
-    imgwdsIndex = (imgwdsIndex + 1) % totalImgwds;
-    showImgwds(imgwdsIndex);
-}
-
-// Show the first imgwds initially
-showImgwds(imgwdsIndex);
-
-// Change imgwds every 3 seconds
-setInterval(nextImgwds, 3000);
 
 
 
@@ -105,6 +149,34 @@ for (let i = 0; i < acc.length; i++) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+
+    // Call the function to create the slides
+    createSlides();
+
+    // Image carousel
+    let imgwdsIndex = 0;
+    const imgwds = document.querySelectorAll('#imageCarousel .imgwds');
+    const totalImgwds = imgwds.length;
+
+    function showImgwds(index) {
+        imgwds.forEach(imgwds => imgwds.style.display = 'none'); // Hide all imgwds
+        console.log(imgwds);
+        imgwds[index].style.display = 'block'; // Show the selected imgwds
+    }
+
+    function nextImgwds() {
+        imgwdsIndex = (imgwdsIndex + 1) % totalImgwds;
+        showImgwds(imgwdsIndex);
+    }
+
+    // Show the first imgwds initially
+    showImgwds(imgwdsIndex);
+
+    // Change imgwds every 3 seconds
+    setInterval(nextImgwds, 3000);
+
+
+    // Contact form
     const form = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
     const formEndpoint = 'https://formspree.io/f/xeqybydd';
@@ -142,6 +214,8 @@ document.addEventListener('DOMContentLoaded', function () {
             formStatus.style.color = 'red';
         }
     });
+
+
 
     // Initialize maps
     var map1 = L.map('mapContainer1').setView([40.7128, -74.0060], 10); // New York City
